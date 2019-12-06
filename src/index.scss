@@ -1,0 +1,17 @@
+$color : red;
+$color2 : blue;
+
+
+@mixin test ($color) {
+  text-align: right;
+  color: $color;
+}
+
+#app  {
+  > h1 {
+    @include test($color)
+  }
+  > h2 {
+    @include test($color2)
+  }
+}

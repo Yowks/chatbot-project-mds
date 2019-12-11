@@ -1,24 +1,18 @@
 import './index.scss';
+import './data.json';
 
-class HelloWorld {
-  constructor(say = 'Hello World') {
-    this.say = say;
+class Users {
+  constructor(data) {
+    this.data = data;
   }
 
-  speak(say = this.say) {
-    const el = document.querySelector('#app');
-    const elH1 = document.createElement('h1');
-    const elH2 = document.createElement('h2');
-
-    elH1.textContent = say;
-    elH2.textContent = say;
-    el.appendChild(elH1);
-    el.appendChild(elH2);
+  usersDisplay() {
+    const left = document.querySelector('#left');
+    const eachUser = document.createElement('div').classList.add('eachUser');
+    left.appendChild(eachUser);
+    console.log(this.data.id);
   }
 }
-
-const helloWorld = new HelloWorld();
-
-helloWorld.speak();
-helloWorld.speak('Wep');
-
+const mydata = JSON.parse(data);
+const users = new Users();
+users(mydata);

@@ -1,14 +1,14 @@
 {
-    "data": {
-		"1": {
+    "users": [
+        {
             "name": "Météo",
             "id_user": "1",
             "name_photo_user":"1.jpg"
         },
-        "2": {
+        {
             "name": "Sport",
             "id_user": "2",
             "name_photo_user":"2.jpg"
         }
-    }
+    ]
 }

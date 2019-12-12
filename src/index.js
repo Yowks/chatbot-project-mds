@@ -1,18 +1,21 @@
 import './index.scss';
-import './data.json';
+import myJsonData from './data.json';
 
 class Users {
-  constructor(data) {
+  usersDisplay(data, i) {
     this.data = data;
-  }
-
-  usersDisplay() {
+    this.i = i;
     const left = document.querySelector('#left');
-    const eachUser = document.createElement('div').classList.add('eachUser');
-    left.appendChild(eachUser);
-    console.log(this.data.id);
+    const divUser = document.createElement('div');
+    divUser.setAttribute('class', 'eachUser');
+    const name = 'name';
+    const nameCreate = document.createTextNode(this.data.users[this.i][name]);
+    divUser.appendChild(nameCreate);
+    left.appendChild(divUser);
   }
 }
-const mydata = JSON.parse(data);
+const mydata = JSON.parse(JSON.stringify(myJsonData));
 const users = new Users();
-users(mydata);
+for (let i = 0; i < mydata.users.length; i += 1) {
+  users.usersDisplay(mydata, i);
+}

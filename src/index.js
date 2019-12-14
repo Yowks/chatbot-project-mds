@@ -27,6 +27,29 @@ class Users {
     divUserInfoName.appendChild(nameCreate);
     left.appendChild(divUser);
   }
+
+  personnal(data) {
+    this.data = data;
+    const personnal = document.querySelector('#personnal');
+    const divUserPhoto = document.createElement('div');
+    const imgUserPhoto = document.createElement('img');
+    const divUserInfo = document.createElement('div');
+    const divUserInfoName = document.createElement('h2');
+    const name = 'name';
+    const img = 'name_photo_user';
+    const src = 'src/img/';
+    const nameCreate = document.createTextNode(this.data.me[0][name]);
+    const imgValue = this.data.me[0][img];
+    personnal.setAttribute('class', 'user');
+    divUserPhoto.setAttribute('class', 'userPhoto');
+    imgUserPhoto.setAttribute('src', `${src}${imgValue}`);
+    divUserInfo.setAttribute('class', 'userInfo');
+    personnal.appendChild(divUserPhoto);
+    personnal.appendChild(divUserInfo);
+    divUserPhoto.appendChild(imgUserPhoto);
+    divUserInfo.appendChild(divUserInfoName);
+    divUserInfoName.appendChild(nameCreate);
+  }
 }
 
 function init() {
@@ -35,6 +58,7 @@ function init() {
   for (let i = 0; i < mydata.users.length; i += 1) {
     users.usersDisplay(mydata, i);
   }
+  users.personnal(mydata);
 }
 
 init();

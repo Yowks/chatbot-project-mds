@@ -76,7 +76,7 @@ h1, h2, h3, h4, h5{
 .userInfo h2 {
   font-size: 20px;
   line-height: 70px;
-  font-weight: none;
+  font-weight: 100;
 }
 
 .eachUser {
@@ -104,7 +104,7 @@ h1, h2, h3, h4, h5{
 .eachUserInfo h2 {
   font-size: 16px;
   line-height: 70px;
-  font-weight: none;
+  font-weight: 100;
 }
 
 .active{
@@ -117,22 +117,11 @@ h1, h2, h3, h4, h5{
   height: 100%;
   position: relative;
   left: 30%;
-  display: none;
-}
-
-#menu {
-  min-height: 10%;
-  width: 70%;
-  border-bottom: 1px solid #e3e1e1;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .10);
-  position: fixed;
-  top: 0;
 }
 
 #chat {
   position: relative;
-  top: 10%;
-  height: 80%;
+  max-height: 90%;
 }
 
 #message {
@@ -159,21 +148,33 @@ h1, h2, h3, h4, h5{
 }
 
 .sender {
-  clear: both;
-  float: right;
   background: #0084ff;
-  margin:10px 2%;
   padding: 15px;
   border-radius: 20px;
   color: #FFF;
 }
 
 .receiver {
-  clear: both;
-  float: left;
   background: #636363;
-  margin:10px 2%;
   padding: 15px;
   border-radius: 20px;
   color: #FFF;
+}
+
+.message_received{
+  clear: both;
+  float: left;
+  margin:10px 2%;
+}
+
+.message_send{
+  clear: both;
+  float: right;
+  margin:10px 2%;
+}
+
+.speakingPhoto {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
 }

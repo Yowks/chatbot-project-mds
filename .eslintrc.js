@@ -1,20 +1,18 @@
 module.exports = {
-  env: {
-    browser: true,
-    es6: true,
+  'parser': 'babel-eslint',
+  'parserOptions': {
+    'sourceType': 'module',
+    'allowImportExportEverywhere': false,
+    'codeFrame': false
   },
-  extends: [
-    'airbnb-base',
-  ],
-  globals: {
-    Atomics: 'readonly',
-    SharedArrayBuffer: 'readonly',
+  'extends': 'airbnb-base',
+  'env': {
+    'browser': true,
+    'node': true,
+    'es6': true
   },
-  parserOptions: {
-    ecmaVersion: 2018,
-    sourceType: 'module',
-  },
-  rules: {
-    "linebreak-style": 0,
-  },
+  'rules': {
+    'class-methods-use-this': 0,
+    'linebreak-style': 0
+  }
 };
